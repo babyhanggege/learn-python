@@ -1,0 +1,152 @@
+code1：编写程序，从键盘输入圆的半径，计算并输出圆的周长和面积
+	>>> import math
+	>>> radius = float(input("请输入圆的半径："))
+	请输入圆的半径：89
+	>>> circumference=2*math.pi*radius
+	>>> area=math.pi*radius*radius
+	>>> print("圆的周长为：%.2f" % circumference)
+	圆的周长为：559.20
+	>>> print("圆的面积为：%.2f" % area)
+	圆的面积为：24884.56
+code2:编写程序，从键盘输入语文、数学、英语三门功课的成绩，计算并输出平均成绩，要求平均成绩小数点后保留1位。
+	>>> chinese=float(input("请输入您的语文成绩："))
+	请输入您的语文成绩：34.90
+	>>> math=float(input("请输入您的数学成绩："))
+	请输入您的数学成绩：89.10
+	>>> english=float(input("请输入您的英语成绩："))
+	请输入您的英语成绩：20
+	>>> average=（chinese + math + english）/3
+	>>> print("您的平均成绩为:%.1f" % average)
+	您的平均成绩为:48.0
+code3:编写程序，从键盘输入年份，输出当年的年历。
+	>>> import calendar
+	>>> year = int(input("请输入年份："))
+	请输入年份：2017
+	>>> table = calendar.calendar(year)
+	>>> print(table)
+code4:编写程序，判断年龄是否大于18.
+	>>> name = input("请输入您的姓名：")
+	请输入您的姓名：testuser
+	>>> age = int(input("请输入您的年龄："))
+	请输入您的年龄：30
+	>>> if age >= 18:
+		print(name,"已经成年")
+		print("可以进行驾照考试了！")
+
+		
+	testuser 已经成年
+	可以进行驾照考试了！
+code5:编写程序，根据平均分数的成绩，如果85分，一等。75分，二等。60，三等。
+	>>> name = input("请输入您的姓名：")
+	请输入您的姓名：usb
+	>>> chinese = float(input("请输入语文成绩："))
+	请输入语文成绩：78
+	>>> math = float(input("请输入数学成绩："))
+	请输入数学成绩：59
+	>>> english = float(input("请输入英语成绩："))
+	请输入英语成绩：46.5
+	>>> average = (chinese + math + english)/3
+	>>> if average>=85:
+    print(name," 获一等奖")
+	elif average>=75:
+	    print(name," 获二等奖")
+	elif average>=60:
+	    print(name," 获三等奖")
+	else:
+	    print(name,"没有获奖")
+
+	usb  获三等奖
+code6:编写程序，从键盘输入一个整型数字，判断该数字是否为偶数。
+	>>> number = int(input("please input a number:"))
+	please input a number:13
+	>>> if number%2 == 0:
+		print(number,"是一个偶数")
+	else:
+		print(number,"是一个奇数")
+
+		
+	13 是一个奇数
+code7:从键盘输入三条边，判断是否能够构成一个三角形。如果能，则提示可以构成三角形；如果不能，则提示不能构成三角形。
+	>>> side1=float(input("请输入三角形第一条边："))
+	请输入三角形第一条边：3
+	>>> side2=float(input("请输入三角形第二条边："))
+	请输入三角形第二条边：4
+	>>> side3=float(input("请输入三角形第三条边："))
+	请输入三角形第三条边：5
+	>>> if (side1 + side2 > side3) and (side1 + side3 > side2) and (side2 + side3 > side1):
+		print(side1,side2,side3,"可以构成三角形")
+	else:
+		print(side1,side2,side3,"不能构成三角形")
+
+		
+	3.0 4.0 5.0 可以构成三角形
+code8:编写程序，调用随机函数生成一个1~100之间的随机整数，从键盘输入数字进行猜谜，给出猜测结果（太大、太小、成功）的提示。
+	>>> import random
+	>>> randnumber = random.randint(1,100)
+	>>> guess = int(input("请输入一个1~100的您猜测的数字："))
+	请输入一个1~100的您猜测的数字：78
+	>>> if guess > randnumber:
+		print("您的猜测太大")
+	elif guess< randnumber:
+		print("您的猜测太小")
+	else:
+		print("恭喜您猜对了")
+
+		
+	您的猜测太小
+code9:我国的婚姻法规定，男性22岁为合法结婚年龄，女性20岁为合法结婚年龄。因此如果要判断一个人是否到了合法结婚年龄，首先需要使用双分支结构判断性别，再用递进的双分支结构判断年龄，并输出判断结果。
+	>>> sex = input("请输入您的性别（M或者F）：")
+	请输入您的性别（M或者F）：M
+	>>> age = int(input('请输入您的年龄1-120：'))
+	请输入您的年龄1-120：89
+	>>> if sex == 'M':
+		if age >= 22:
+			print("到达合法结婚年龄")
+		else:
+			print("未到合法结婚年龄")
+	else:
+		if age >= 20:
+			print("到达合法结婚年龄")
+		else:
+			print("未到合法结婚年龄")
+
+			
+	到达合法结婚年龄
+code10:从键盘输入用户名和密码，要求先判断用户名再判断密码，如果用户名不正确，则直接提示用户名输入有误；如果用户名正确，则进一步判断密码，并给出判断结果的提示。
+	>>> username = input("请输入您的用户名:")
+	请输入您的用户名:test
+	>>> password = input("请输入您的密码：")
+	请输入您的密码：90203444
+	>>> if username == "admin":
+		if password == "123456":
+			print("输入正确，可以进入")
+		else:
+			print("密码错误，禁止进入")
+	else:
+		print("用户名有误，请重新输入")
+
+		
+	用户名有误，请重新输入
+code11:开发一个小型计算器，从键盘输入两个数字和一个运算符，根据运算符（+、-、*、/）进行相应的数学运算，如果不是这4种运算符，则给出错误提示。
+	>>> first = float(input("请输入第一个数字："))
+	请输入第一个数字：12
+	>>> second = float(input("请输入第二个数字："))
+	请输入第二个数字：2
+	>>> sign = input("请输入运算符号：")
+	请输入运算符号：/
+	>>> if sign == '+':
+		print("两数之和为：",first+second)
+	elif sign == '-':
+		print("两数之差为：",first - second)
+	elif sign == '*':
+		print("两数值积为：",first * second)
+	elif sign == '/':
+		if second!=0:
+			print("两数之商为：",first/second)
+		else:
+			print("除数为0错误！")
+	else:
+		print("符号输入有误！")
+
+		
+	两数之商为： 6.0
